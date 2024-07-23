@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter une Entrée de Stock</title>
+</head>
+<body>
+    <h1>Ajouter une Entrée de Stock</h1>
+    <form action="/stocks/entrer" method="post">
+        <select name="produit_id" required>
+            <% produits.forEach(produit => { %>
+                <option value="<%= produit.id %>"><%= produit.nom %></option>
+            <% }) %>
+        </select>
+        <input type="number" name="quantite" placeholder="Quantité" required>
+        <button type="submit">Ajouter Entrée</button>
+    </form>
+</body>
+</html>

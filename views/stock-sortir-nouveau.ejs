@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter une Sortie de Stock</title>
+</head>
+<body>
+    <h1>Ajouter une Sortie de Stock</h1>
+    <form action="/stocks/sortir" method="post">
+        <select name="produit_id" required>
+            <% produits.forEach(produit => { %>
+                <option value="<%= produit.id %>"><%= produit.nom %></option>
+            <% }) %>
+        </select>
+        <input type="number" name="quantite" placeholder="Quantité" required>
+        <button type="submit">Ajouter Sortie</button>
+    </form>
+</body>
+</html>

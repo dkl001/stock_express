@@ -1,0 +1,18 @@
+<!-- views/categories/index.ejs -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catégories</title>
+</head>
+<body>
+  <h1>Liste des Catégories</h1>
+  <a href="/categories/nouveau">Ajouter une nouvelle catégorie</a>
+  <ul>
+    <% categories.forEach(categorie => { %>
+      <li><%= categorie.nom %> - <%= categorie.description %></li>
+    <% }) %>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nouvelle Sortie</title>
+</head>
+<body>
+  <h1>Ajouter une Nouvelle Sortie</h1>
+  <form action="/sorties" method="POST">
+    <label for="produit_id">Produit :</label>
+    <select id="produit_id" name="produit_id" required>
+      <% produits.forEach(produit => { %>
+        <option value="<%= produit.id %>"><%= produit.nom %></option>
+      <% }) %>
+    </select>
+    <label for="quantite">Quantité :</label>
+    <input type="number" id="quantite" name="quantite" required>
+    <button type="submit">Ajouter</button>
+  </form>
+</body>
+</html>

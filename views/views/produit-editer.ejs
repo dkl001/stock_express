@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier un Produit</title>
+</head>
+<body>
+    <h1>Modifier un Produit</h1>
+    <form action="/produits/editer/<%= produit.id %>" method="post">
+        <input type="text" name="nom" value="<%= produit.nom %>" required>
+        <input type="number" name="stock" value="<%= produit.stock %>" required>
+        <button type="submit">Modifier</button>
+    </form>
+</body>
+</html>

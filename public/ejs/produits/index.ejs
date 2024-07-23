@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produits</title>
+</head>
+<body>
+  <h1>Liste des Produits</h1>
+  <a href="/produits/nouveau">Ajouter un nouveau produit</a>
+  <ul>
+    <% produits.forEach(produit => { %>
+      <li>
+        Nom: <%= produit.nom %> - 
+        Catégorie: <%= produit.Categorie.nom %> - 
+        Prix: <%= produit.prix %>€ - 
+        Quantité disponible: <%= produit.quantiteDisponible %>
+        <form action="/produits/<%= produit.id %>/supprimer" method="POST" style="display:inline;">
+          <button type="submit">Supprimer</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>

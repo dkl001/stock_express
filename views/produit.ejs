@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Produits</title>
+</head>
+<body>
+    <h1>Produits</h1>
+    <a href="/produits/nouveau">Ajouter un nouveau produit</a>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Stock</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% produits.forEach(produit => { %>
+                <tr>
+                    <td><%= produit.id %></td>
+                    <td><%= produit.nom %></td>
+                    <td><%= produit.stock %></td>
+                    <td>
+                        <a href="/produits/editer/<%= produit.id %>">Modifier</a>
+                        <form action="/produits/supprimer/<%= produit.id %>" method="post" style="display:inline;">
+                            <button type="submit">Supprimer</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

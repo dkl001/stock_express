@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorties</title>
+</head>
+<body>
+  <h1>Liste des Sorties</h1>
+  <a href="/sorties/nouveau">Ajouter une nouvelle sortie</a>
+  <ul>
+    <% sorties.forEach(sortie => { %>
+      <li>Produit : <%= sortie.Produit.nom %> - Quantité : <%= sortie.quantite %> - Date : <%= sortie.createdAt.toLocaleDateString() %></li>
+    <% }) %>
+  </ul>
+</body>
+</html>
